@@ -36,3 +36,9 @@ Bootstrap implementation note (2026-09-11): the continuation prompt above also f
 The empty-tree calculation reads /dev/null explicitly so pre-push reference input cannot be mistaken for tree bytes.
 
 Publication reference (2026-09-11): the bootstrap prompts recorded above produced https://github.com/machinapractica/packages/pull/1. This resolves their earlier pending PR references without changing historical prompt text.
+
+---
+
+> ok I have done it. let's complete setup
+
+Recorded 2026-09-11 from human maintainer; repeated verbatim to associate the continuation with the operational follow-up PR (pending). Retain Git ancestry during provenance fetches and validate changes on main as well as pull requests.
