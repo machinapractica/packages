@@ -1,0 +1,208 @@
+{
+  "formatVersion": 1,
+  "recordedOn": "2026-09-11",
+  "policy": "Committed source only. GPL source snapshots are reference material, not adopters or production histories. No private user data is captured.",
+  "sources": [
+    {
+      "name": "sudoku",
+      "repository": "https://github.com/anicolao/sudoku",
+      "revision": "815c59ab9ec0acede404f8dc8a808449e1f62e0c",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "url": "https://github.com/anicolao/sudoku/blob/815c59ab9ec0acede404f8dc8a808449e1f62e0c/LICENSE"
+        },
+        {
+          "path": "tests/e2e/helpers/test-step-helper.ts",
+          "sha256": "bd32354bdb8c8402f5a09f0d3b3652e34fac3237b779d7a90e893ec0ff384d56",
+          "url": "https://github.com/anicolao/sudoku/blob/815c59ab9ec0acede404f8dc8a808449e1f62e0c/tests/e2e/helpers/test-step-helper.ts"
+        },
+        {
+          "path": "src/lib/shell-update.ts",
+          "sha256": "706dfa28fb411ecab1a5ee093077a8c22cc3f26e8e07ee5c43bdb2b9d0c2234e",
+          "url": "https://github.com/anicolao/sudoku/blob/815c59ab9ec0acede404f8dc8a808449e1f62e0c/src/lib/shell-update.ts"
+        },
+        {
+          "path": "src/lib/storage/event-store.ts",
+          "sha256": "71038f01320a928fa93fe0a46f87c4174abccc1df4783e4871c64c52230d3175",
+          "url": "https://github.com/anicolao/sudoku/blob/815c59ab9ec0acede404f8dc8a808449e1f62e0c/src/lib/storage/event-store.ts"
+        },
+        {
+          "path": "src/service-worker.ts",
+          "sha256": "1a5fc87f71f9a4717d68085445dac060bbf454743ced176932da84798de1e4d2",
+          "url": "https://github.com/anicolao/sudoku/blob/815c59ab9ec0acede404f8dc8a808449e1f62e0c/src/service-worker.ts"
+        },
+        {
+          "path": "src/routes/version.json/+server.ts",
+          "sha256": "4c5ce2b49a95bec981844e7b0c13f68b044f0b2cdd4e9eb59e3f72f8ecdd3066",
+          "url": "https://github.com/anicolao/sudoku/blob/815c59ab9ec0acede404f8dc8a808449e1f62e0c/src/routes/version.json/+server.ts"
+        }
+      ]
+    },
+    {
+      "name": "hunger",
+      "repository": "https://github.com/anicolao/hunger",
+      "revision": "784ebfa32724089867d8ec70332e690f9fbd520f",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "url": "https://github.com/anicolao/hunger/blob/784ebfa32724089867d8ec70332e690f9fbd520f/LICENSE"
+        },
+        {
+          "path": "tests/e2e/helpers/test-step-helper.ts",
+          "sha256": "6a7151ba1f4ff325b076fafe9c3b095e4898210e6c1df3a991ffcfbf528e8878",
+          "url": "https://github.com/anicolao/hunger/blob/784ebfa32724089867d8ec70332e690f9fbd520f/tests/e2e/helpers/test-step-helper.ts"
+        },
+        {
+          "path": "src/lib/data/events.ts",
+          "sha256": "31a76b9d9b67af96c12d6245fc521fa26f424c2c24f46d829f500266bcf8a33c",
+          "url": "https://github.com/anicolao/hunger/blob/784ebfa32724089867d8ec70332e690f9fbd520f/src/lib/data/events.ts"
+        },
+        {
+          "path": "src/lib/data/migrations.ts",
+          "sha256": "3a7381538c4377b3e961594bd028086e829ae4e96df731ca4a37da35556de6fc",
+          "url": "https://github.com/anicolao/hunger/blob/784ebfa32724089867d8ec70332e690f9fbd520f/src/lib/data/migrations.ts"
+        },
+        {
+          "path": "src/lib/data/schema.ts",
+          "sha256": "d1aa3d5c7fffdd88289b23c36936841cb6354459487e73a4898fe65df026b69a",
+          "url": "https://github.com/anicolao/hunger/blob/784ebfa32724089867d8ec70332e690f9fbd520f/src/lib/data/schema.ts"
+        },
+        {
+          "path": "src/service-worker.ts",
+          "sha256": "5a0c1a271bb0d0bdea8aeb5b8505a5cd5e18fdb760c919cd0d379a8bb15c7b01",
+          "url": "https://github.com/anicolao/hunger/blob/784ebfa32724089867d8ec70332e690f9fbd520f/src/service-worker.ts"
+        }
+      ]
+    },
+    {
+      "name": "xwing",
+      "repository": "https://github.com/anicolao/xwing",
+      "revision": "015e73c79c6d795cfbcec903cfa0f50d9c3ef8f9",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "url": "https://github.com/anicolao/xwing/blob/015e73c79c6d795cfbcec903cfa0f50d9c3ef8f9/LICENSE"
+        },
+        {
+          "path": "tests/e2e/helpers/test-step-helper.ts",
+          "sha256": "32c6dfb89977dbba1eecc8a1cdc4f4889dc9e2caf74ee913bccd6bd87414d50f",
+          "url": "https://github.com/anicolao/xwing/blob/015e73c79c6d795cfbcec903cfa0f50d9c3ef8f9/tests/e2e/helpers/test-step-helper.ts"
+        },
+        {
+          "path": "src/lib/game/model.ts",
+          "sha256": "50483b1de2ce123241e09e9e05bc3151837d5c162bbc8c236a3cfaa5c2b925c2",
+          "url": "https://github.com/anicolao/xwing/blob/015e73c79c6d795cfbcec903cfa0f50d9c3ef8f9/src/lib/game/model.ts"
+        },
+        {
+          "path": "src/lib/game/reducer.ts",
+          "sha256": "787373933b5c6a489e9ba9a3e142f7d4a846a0d06aeb1d8a1f22460a00d50f6f",
+          "url": "https://github.com/anicolao/xwing/blob/015e73c79c6d795cfbcec903cfa0f50d9c3ef8f9/src/lib/game/reducer.ts"
+        }
+      ]
+    },
+    {
+      "name": "arknova",
+      "repository": "https://github.com/anicolao/arknova",
+      "revision": "5d5ba6cdea76e6e611c8d2fb46cbdf6503b88184",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "7fe14716ed31cc71fc3bf9af293c368d464a853a70ea86e9995388f6b9e929e5",
+          "url": "https://github.com/anicolao/arknova/blob/5d5ba6cdea76e6e611c8d2fb46cbdf6503b88184/LICENSE"
+        },
+        {
+          "path": "internal/buildinfo/buildinfo.go",
+          "sha256": "01e87c7578c57e1f27a00cb04afbe00ff0b5b18d5da0ee5f9782f46c01284643",
+          "url": "https://github.com/anicolao/arknova/blob/5d5ba6cdea76e6e611c8d2fb46cbdf6503b88184/internal/buildinfo/buildinfo.go"
+        },
+        {
+          "path": "internal/buildinfo/buildinfo_test.go",
+          "sha256": "ce7e188331327b88e08bd94bb7bb333e75ab46aa0224e3081a99d05a566b233c",
+          "url": "https://github.com/anicolao/arknova/blob/5d5ba6cdea76e6e611c8d2fb46cbdf6503b88184/internal/buildinfo/buildinfo_test.go"
+        },
+        {
+          "path": "internal/eventlog/eventlog.go",
+          "sha256": "d9ec463f91f29afc0c5586dffbb3f9b88d6a809f2e71eeaa5d823418639b214c",
+          "url": "https://github.com/anicolao/arknova/blob/5d5ba6cdea76e6e611c8d2fb46cbdf6503b88184/internal/eventlog/eventlog.go"
+        },
+        {
+          "path": "web/tests/e2e/helpers/multi-surface-step-helper.ts",
+          "sha256": "12965c2e83209732556672179b356b1e31da8ebccca15bdbf78bb42bf2c78259",
+          "url": "https://github.com/anicolao/arknova/blob/5d5ba6cdea76e6e611c8d2fb46cbdf6503b88184/web/tests/e2e/helpers/multi-surface-step-helper.ts"
+        }
+      ]
+    },
+    {
+      "name": "roborally",
+      "repository": "https://github.com/anicolao/roborally",
+      "revision": "ca63494e49613d21b6a0daee29ad08823e05558f",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "06cb40362f0eefe2dabbf6b7f3300fbaecfd6013d5646eee00935477e5c7628f",
+          "url": "https://github.com/anicolao/roborally/blob/ca63494e49613d21b6a0daee29ad08823e05558f/LICENSE"
+        },
+        {
+          "path": "tests/e2e/helpers/test-step-helper.ts",
+          "sha256": "41af74ec23ed2ac0a0c6ce83b6b2fe99c4426af250c218f5da40e81390a040b1",
+          "url": "https://github.com/anicolao/roborally/blob/ca63494e49613d21b6a0daee29ad08823e05558f/tests/e2e/helpers/test-step-helper.ts"
+        }
+      ]
+    },
+    {
+      "name": "player",
+      "repository": "https://github.com/anicolao/player",
+      "revision": "f497872fa719de7aa96758caa55bb325d6f228d1",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "e57f1c320b8cf8798a7d2ff83a6f9e06a33a03585f6e065fea97f1d86db84052",
+          "url": "https://github.com/anicolao/player/blob/f497872fa719de7aa96758caa55bb325d6f228d1/LICENSE"
+        },
+        {
+          "path": "apps/ios/scripts/qualification/evidence_manifest.py",
+          "sha256": "292d8dc95d06d234d5f41afc0e37939dd9304c2a04dc58c6c961bc8f621ddac8",
+          "url": "https://github.com/anicolao/player/blob/f497872fa719de7aa96758caa55bb325d6f228d1/apps/ios/scripts/qualification/evidence_manifest.py"
+        },
+        {
+          "path": "apps/ios/scripts/qualification/test_evidence_manifest.py",
+          "sha256": "17eb1f296ea5aaa03138e6f860dbe37142254c41e8be9dcd555960a551995b24",
+          "url": "https://github.com/anicolao/player/blob/f497872fa719de7aa96758caa55bb325d6f228d1/apps/ios/scripts/qualification/test_evidence_manifest.py"
+        }
+      ]
+    },
+    {
+      "name": "food",
+      "repository": "https://github.com/anicolao/food",
+      "revision": "e4748026d41a0ee7621deb8498fcbec72650d6f6",
+      "license": "GPL-3.0 (see retained license for exact grant)",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "1b4fdb4a6e8ac2774e7e12fa0107fcd33245c6986875c7634410a2022afc9291",
+          "url": "https://github.com/anicolao/food/blob/e4748026d41a0ee7621deb8498fcbec72650d6f6/LICENSE"
+        },
+        {
+          "path": "E2E_GUIDE.md",
+          "sha256": "aefa399d5aaf9b8e722efba53e772569349d4c3f2bc494eeffe9e0a963bd11ae",
+          "url": "https://github.com/anicolao/food/blob/e4748026d41a0ee7621deb8498fcbec72650d6f6/E2E_GUIDE.md"
+        },
+        {
+          "path": "src/service-worker.ts",
+          "sha256": "acbfb5652cbb8393ca13d03b0d95fb5fdedf77f1ed0feef023585725a47189ce",
+          "url": "https://github.com/anicolao/food/blob/e4748026d41a0ee7621deb8498fcbec72650d6f6/src/service-worker.ts"
+        }
+      ]
+    }
+  ]
+}

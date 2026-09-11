@@ -1,8 +1,10 @@
 # Machina Practica packages
 
-This is the proposed home for `@machinapractica/*`: small, independently released packages extracted from implementation practices proven in real repositories.
+This is the home for `@machinapractica/*`: small, independently released packages extracted from implementation practices proven in real repositories.
 
-**Status: pre-extraction.** No packages are implemented or published here. The `@machinapractica` npm scope is reserved, with `anicolao` verified as its owner. Workspace and release tooling will be selected after the Wave 0 source inventory.
+**Status: experimental implementation, unpublished.** `@machinapractica/testing` and `@machinapractica/build-info` provide tested ESM/TypeScript entry points and locally installable alpha tarballs. There are no consumer adopters yet. The other proposed packages remain behind the evidence and dependency gates in the [source inventory](docs/SOURCE_INVENTORY.md).
+
+See [implementation status](docs/IMPLEMENTATION_STATUS.md) for the complete proposal mapping. Run `./scripts/verify.sh`; see [release tooling and evidence limits](docs/RELEASING.md), [testing](packages/testing/README.md), and [build-info](packages/build-info/README.md).
 
 [Practica](https://github.com/machinapractica/practica) owns the books, method, skills, and [website](https://machinapractica.com). This repository owns runtime APIs, compatibility promises, and package releases.
 

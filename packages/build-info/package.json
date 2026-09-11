@@ -1,0 +1,41 @@
+{
+  "name": "@machinapractica/build-info",
+  "version": "0.1.0-alpha.0",
+  "description": "Versioned source and artifact identity with explicit freshness",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/machinapractica/packages.git",
+    "directory": "packages/build-info"
+  },
+  "homepage": "https://github.com/machinapractica/packages",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "src",
+    "tsconfig.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "bin": {
+    "mp-build-info": "./dist/cli.js"
+  }
+}
