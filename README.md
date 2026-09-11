@@ -2,7 +2,7 @@
 
 This is the proposed home for `@machinapractica/*`: small, independently released packages extracted from implementation practices proven in real repositories.
 
-**Status: pre-extraction.** No packages are implemented or published here. npm organization ownership must be verified before the scope is described as reserved. Workspace and release tooling will be selected after the Wave 0 source inventory.
+**Status: pre-extraction.** No packages are implemented or published here. The `@machinapractica` npm scope is reserved, with `anicolao` verified as its owner. Workspace and release tooling will be selected after the Wave 0 source inventory.
 
 [Practica](https://github.com/machinapractica/practica) owns the books, method, skills, and [website](https://machinapractica.com). This repository owns runtime APIs, compatibility promises, and package releases.
 
@@ -16,4 +16,4 @@ Use small PRs and record development prompts verbatim in [PROMPTS.md](PROMPTS.md
 
 The first real package should configure npm trusted publishing from GitHub-hosted Actions with provenance. No placeholder packages or long-lived publish tokens belong in this bootstrap.
 
-Licensing is awaiting the owner's decision; no license grant is implied by this draft.
+Original content is licensed under [GPLv3](LICENSE); see [licensing boundaries](LICENSES.md).
