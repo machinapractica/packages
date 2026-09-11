@@ -32,6 +32,13 @@ def staged_paths() -> set[str]:
 
 
 def diff_paths(base_ref: str) -> set[str]:
+    # A new repository has no remote base branch yet. Validate its full
+    # proposed history against Git's empty tree before the bootstrap push.
+    if not git(["ls-remote", "--heads", "origin"]).strip():
+        empty_tree = git(["hash-object", "-t", "tree", "--stdin"]).strip()
+        return changed_paths_from_names(
+            git(["diff", "--name-only", "--diff-filter=ACMRTD", empty_tree, "HEAD"])
+        )
     git(["fetch", "--no-tags", "--depth=1", "origin", f"{base_ref}:refs/remotes/origin/{base_ref}"])
     return changed_paths_from_names(
         git(["diff", "--name-only", "--diff-filter=ACMRTD", f"origin/{base_ref}...HEAD"])
