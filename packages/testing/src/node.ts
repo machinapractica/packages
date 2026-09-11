@@ -59,7 +59,7 @@ export async function withProcess<T>(options: {
     stopping = true; controller.abort(); kill('SIGTERM');
     if (!exited) {
       try { await bounded('process cleanup', 1000, () => exit); }
-      catch { kill('SIGKILL'); await exit; }
+      catch { kill('SIGKILL'); await bounded('forced process cleanup', 1000, () => exit); }
     }
     // A parent may exit before its descendants; kill any remaining owned Unix process group.
     if (process.platform !== 'win32') kill('SIGKILL');

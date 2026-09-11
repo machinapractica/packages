@@ -2,6 +2,7 @@
 export const EVIDENCE_CONTRACT = '1.0.0' as const;
 export async function bounded<T>(label: string, timeoutMs: number, task: (signal: AbortSignal) => Promise<T>, parent?: AbortSignal): Promise<T> {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new Error('timeout must be positive');
+  if (parent?.aborted) throw new Error(`${label}: cancelled`);
   const controller = new AbortController();
   let timer: ReturnType<typeof setTimeout> | undefined;
   let cancel: (() => void) | undefined;

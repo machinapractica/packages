@@ -74,3 +74,8 @@ test('logs and traces are hashed and linked without converting failed steps into
  assert.throws(()=>recorder.addArtifact(log),/duplicate/);await assert.rejects(writeArtifact(directory,'evidence.json','log',new Uint8Array()),/reserved/);
  }finally{await rm(parent,{recursive:true,force:true});}
 });
+
+test('already-cancelled coordination never starts an action',async()=>{
+ const {bounded}=await import('@machinapractica/testing');const controller=new AbortController();controller.abort();let ran=false;
+ await assert.rejects(bounded('cancelled action',100,async()=>{ran=true;},controller.signal),/cancelled/);assert.equal(ran,false);
+});
