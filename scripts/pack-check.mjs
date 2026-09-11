@@ -36,5 +36,5 @@ try{
 }finally{await rm(temp,{recursive:true,force:true});}
 const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 const dirty=!!execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim();
-await writeFile(join(directory,'release-manifest.json'),JSON.stringify({formatVersion:1,revision,dirty,verification:'unit, browser and packed-install contracts; see CI logs',adopters:[],publication:'unpublished',packages},null,2)+'\n');
+await writeFile(join(directory,'release-manifest.json'),JSON.stringify({formatVersion:1,revision,dirty,verification:'packed contents, exports, CLI and public declarations passed; unit/browser results are separate verifier logs',adopters:[],publication:'unpublished',packages},null,2)+'\n');
 console.log('Verified tarball contents, installed exports and public declarations for both packages.');

@@ -52,3 +52,5 @@ Publication reference (2026-09-11): the operational follow-up above produced htt
 Recorded 2026-09-11 from human maintainer. PRs: pending reusable skills and package implementation. Source repositories are read-only evidence; no consumer migrations or new projects are authorized.
 
 PR reference for the 2026-09-11 reusable-components prompt: https://github.com/machinapractica/packages/pull/3. This PR contains the source inventory, experimental testing/build-info implementations, compatibility checks and release tooling; it performs no source-repository migration or new-project creation.
+
+Verification follow-up for PR #3: keep the tarball manifest's own claims limited to packed-install checks; the complete verifier and CI retain unit/browser results separately.
