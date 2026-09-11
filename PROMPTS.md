@@ -42,3 +42,5 @@ Publication reference (2026-09-11): the bootstrap prompts recorded above produce
 > ok I have done it. let's complete setup
 
 Recorded 2026-09-11 from human maintainer; repeated verbatim to associate the continuation with the operational follow-up PR (pending). Retain Git ancestry during provenance fetches and validate changes on main as well as pull requests.
+
+Publication reference (2026-09-11): the operational follow-up above produced https://github.com/machinapractica/packages/pull/2.
