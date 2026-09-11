@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+base_ref="${PROMPT_PROVENANCE_BASE_REF:-main}"
+python3 scripts/check_prompt_provenance.py --mode diff --base-ref "$base_ref"
