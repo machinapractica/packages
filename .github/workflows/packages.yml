@@ -1,0 +1,32 @@
+name: Package contracts
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  package-verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --global npm@11.16.0
+      - run: npm ci --ignore-scripts && npx --no-install playwright install-deps chromium
+      - run: ./scripts/verify.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: package-evidence-${{ github.sha }}
+          path: |
+            evidence/
+            test-results/
+            playwright-report/
+            .artifacts/
+          include-hidden-files: true
+          retention-days: 14
