@@ -6,7 +6,7 @@ Packages have independent versions and changelogs. No automatic version bumps, `
 
 ## Registry bootstrap
 
-These packages are initially **unpublished**. npm's [trust command](https://docs.npmjs.com/cli/v11/commands/npm-trust/) supports CLI configuration, but requires an existing registry package and account 2FA. Do not publish an empty placeholder to satisfy that requirement. The first real package publication and any npm authentication challenge remain distinct from preparing the tarball and workflow.
+Both packages were bootstrapped at **0.1.0-alpha.0** on 2026-09-12, with public access and the `alpha` tag. Their GitHub trusted publishers are configured for this repository, `release.yml`, environment `npm`. The initial versions were published locally without GitHub provenance. npm's [trust command](https://docs.npmjs.com/cli/v11/commands/npm-trust/) supports CLI configuration, but requires an existing registry package and account 2FA. Do not publish an empty placeholder to satisfy that requirement. The first real package publication and any npm authentication challenge remain distinct from preparing the tarball and workflow.
 
 After the actual package exists, configure each package with the authenticated CLI:
 

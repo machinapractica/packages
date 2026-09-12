@@ -2,7 +2,7 @@
 
 This is the home for `@machinapractica/*`: small, independently released packages extracted from implementation practices proven in real repositories.
 
-**Status: experimental implementation, unpublished.** `@machinapractica/testing` and `@machinapractica/build-info` provide tested ESM/TypeScript entry points and locally installable alpha tarballs. There are no consumer adopters yet. The other proposed packages remain behind the evidence and dependency gates in the [source inventory](docs/SOURCE_INVENTORY.md).
+**Status: experimental alpha releases.** `@machinapractica/testing` and `@machinapractica/build-info` provide tested ESM/TypeScript entry points and alpha releases (`0.1.0-alpha.0`) on npm. There are no consumer adopters yet. The other proposed packages remain behind the evidence and dependency gates in the [source inventory](docs/SOURCE_INVENTORY.md).
 
 See [implementation status](docs/IMPLEMENTATION_STATUS.md) for the complete proposal mapping. Run `./scripts/verify.sh`; see [release tooling and evidence limits](docs/RELEASING.md), [testing](packages/testing/README.md), and [build-info](packages/build-info/README.md).
 
