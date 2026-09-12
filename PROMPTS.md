@@ -69,3 +69,5 @@ Actor: user. PR: pending. Continuing the authorized initial publication and trus
 > done
 
 PR reference for the 2026-09-12 npm publication continuation: https://github.com/machinapractica/packages/pull/4.
+
+PR #4 verification follow-up: public registry tarballs match the tested hashes; record npm's additional latest tags and unsuccessful tag-cleanup attempt without implying a stable release.

@@ -22,3 +22,5 @@ These commands may require npm's account authentication challenge; a GitHub webs
 No existing repository imports these packages yet. Packed-install and browser fixtures are package tests, not adopters. The retained Ark Nova manifest is an existing synthetic unit fixture, not a production artifact. Pinned source hash checks prove snapshot integrity, not complete historical compatibility. See [source inventory](SOURCE_INVENTORY.md) for later extraction gates.
 
 Before 1.0 require three independent consumers, net deletion of local code, retained historical compatibility and consumer CI against released versions. Consumer migrations, initial projects, and native/hardware qualification are outside this implementation's scope.
+
+Bootstrap registry detail (2026-09-12): npm created both `alpha` and `latest` tags pointing to `0.1.0-alpha.0`, despite the publish command explicitly selecting `--tag alpha`. An attempted `latest` removal returned HTTP 400; tag cleanup is not complete. Use an explicit version or `@alpha` to make the experimental choice clear. No stable version is published.
