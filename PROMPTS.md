@@ -67,3 +67,5 @@ Actor: user. PR: pending. Continuing the authorized initial publication and trus
 > done
 
 > done
+
+PR reference for the 2026-09-12 npm publication continuation: https://github.com/machinapractica/packages/pull/4.
