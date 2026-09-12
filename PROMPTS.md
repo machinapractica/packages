@@ -54,3 +54,20 @@ Recorded 2026-09-11 from human maintainer. PRs: pending reusable skills and pack
 PR reference for the 2026-09-11 reusable-components prompt: https://github.com/machinapractica/packages/pull/3. This PR contains the source inventory, experimental testing/build-info implementations, compatibility checks and release tooling; it performs no source-repository migration or new-project creation.
 
 Verification follow-up for PR #3: keep the tarball manifest's own claims limited to packed-install checks; the complete verifier and CI retain unit/browser results separately.
+
+
+## npm publication continuation — 2026-09-12
+
+Actor: user. PR: pending. Continuing the authorized initial publication and trusted-publisher setup. Prompts received verbatim:
+
+> do you still require npm auth? it has gone stale, try again
+
+> done
+
+> done
+
+> done
+
+PR reference for the 2026-09-12 npm publication continuation: https://github.com/machinapractica/packages/pull/4.
+
+PR #4 verification follow-up: public registry tarballs match the tested hashes; record npm's additional latest tags and unsuccessful tag-cleanup attempt without implying a stable release.

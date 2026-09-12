@@ -6,7 +6,7 @@ Packages have independent versions and changelogs. No automatic version bumps, `
 
 ## Registry bootstrap
 
-These packages are initially **unpublished**. npm's [trust command](https://docs.npmjs.com/cli/v11/commands/npm-trust/) supports CLI configuration, but requires an existing registry package and account 2FA. Do not publish an empty placeholder to satisfy that requirement. The first real package publication and any npm authentication challenge remain distinct from preparing the tarball and workflow.
+Both packages were bootstrapped at **0.1.0-alpha.0** on 2026-09-12, with public access and the `alpha` tag. Their GitHub trusted publishers are configured for this repository, `release.yml`, environment `npm`. The initial versions were published locally without GitHub provenance. npm's [trust command](https://docs.npmjs.com/cli/v11/commands/npm-trust/) supports CLI configuration, but requires an existing registry package and account 2FA. Do not publish an empty placeholder to satisfy that requirement. The first real package publication and any npm authentication challenge remain distinct from preparing the tarball and workflow.
 
 After the actual package exists, configure each package with the authenticated CLI:
 
@@ -22,3 +22,5 @@ These commands may require npm's account authentication challenge; a GitHub webs
 No existing repository imports these packages yet. Packed-install and browser fixtures are package tests, not adopters. The retained Ark Nova manifest is an existing synthetic unit fixture, not a production artifact. Pinned source hash checks prove snapshot integrity, not complete historical compatibility. See [source inventory](SOURCE_INVENTORY.md) for later extraction gates.
 
 Before 1.0 require three independent consumers, net deletion of local code, retained historical compatibility and consumer CI against released versions. Consumer migrations, initial projects, and native/hardware qualification are outside this implementation's scope.
+
+Bootstrap registry detail (2026-09-12): npm created both `alpha` and `latest` tags pointing to `0.1.0-alpha.0`, despite the publish command explicitly selecting `--tag alpha`. An attempted `latest` removal returned HTTP 400; tag cleanup is not complete. Use an explicit version or `@alpha` to make the experimental choice clear. No stable version is published.
