@@ -24,6 +24,8 @@ try{
  await mkdir(join(temp,'artifact'));
  await writeFile(join(temp,'artifact','index.html'),'packed CLI fixture');
  await writeFile(join(temp,'package.json'),JSON.stringify({private:true,type:'module'}));
+ const dependencyLock = JSON.parse(await readFile('package-lock.json', 'utf8'));
+ await writeFile(join(temp, 'package-lock.json'), JSON.stringify({ lockfileVersion: 3, requires: true, packages: { '': { private: true, type: 'module' }, ...Object.fromEntries(Object.entries(dependencyLock.packages).filter(([name]) => name.startsWith('node_modules/@babel/'))) } }));
  execFileSync('npm',['install','--ignore-scripts','--no-audit','--no-fund','--offline',...packages.map(p=>join(directory,p.filename))],{cwd:temp,stdio:'pipe'});
  execFileSync('node',['--input-type=module','-e',`import assert from 'node:assert/strict';import {Recorder} from '@machinapractica/testing';import {sha256} from '@machinapractica/testing/node';import {parseBuildInfo} from '@machinapractica/build-info';import {hashArtifact} from '@machinapractica/build-info/node';assert.equal(new Recorder({scenario:'packed import',revision:'a'.repeat(40),platform:'node'}).snapshot().status,'running');assert.equal(sha256(new Uint8Array()).length,64);assert.throws(()=>parseBuildInfo({}));assert.match(await hashArtifact('artifact'),/^sha256:/);`],{cwd:temp,stdio:'pipe'});
  execFileSync(join(temp,'node_modules/.bin/mp-build-info'),['create','artifact','https://github.com/machinapractica/packages','a'.repeat(40),'packed-test'],{cwd:temp,stdio:'pipe'});

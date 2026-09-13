@@ -80,3 +80,5 @@ PR: https://github.com/machinapractica/packages/pull/5
 ```text
 I notice in the testing you did you encountered fixed sleeps. Can we not enforce the testing rules when the testing package is isntalled? It would ideally put precommits into the project that would fail the fixed waits without the user needing to ask the agent to do that or the agent doing it over again every tiem
 ```
+
+Validation note: the clean Linux runner exposed missing registry metadata in offline install fixtures. The fixtures now seed dependency entries from the committed lockfile; the packed contracts also pass with a newly created npm cache populated only by npm ci.

@@ -11,6 +11,14 @@ function run(cwd, command, args, status = 0) {
   assert.equal(result.status, status, `${command} ${args.join(' ')}\n${result.stdout}\n${result.stderr}`);
   return result.stdout;
 }
+const dependencyLock = JSON.parse(readFileSync('package-lock.json', 'utf8'));
+function seedLock(root) {
+  const packages = { '': JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')) };
+  for (const [name, entry] of Object.entries(dependencyLock.packages)) {
+    if (name.startsWith('node_modules/@babel/')) packages[name] = entry;
+  }
+  writeFileSync(join(root, 'package-lock.json'), JSON.stringify({ lockfileVersion: 3, requires: true, packages }));
+}
 function init(name, scripts = {}) {
   const root = join(temp, name); mkdirSync(root);
   run(root, 'git', ['init', '-q']);
@@ -21,6 +29,7 @@ function init(name, scripts = {}) {
   return root;
 }
 function install(root, ignored = false) {
+  seedLock(root);
   run(root, 'npm', ['install', '--save-dev', '--offline', '--no-audit', '--no-fund', ...(ignored ? ['--ignore-scripts'] : ['--ignore-scripts=false']), tarball]);
 }
 function cli(root, ...args) { return run(root, join(root, 'node_modules/.bin/mp-testing'), args); }
@@ -89,6 +98,7 @@ try {
   cli(nested, 'uninstall');
   run(mono, 'git', ['config', '--local', '--get', 'core.hooksPath'], 1);
   const prefixed = init('explicit prefix');
+  seedLock(prefixed);
   run(temp, 'npm', ['install', '--prefix', prefixed, '--offline', '--ignore-scripts=false', '--no-audit', '--no-fund', tarball]);
   assert.match(run(prefixed, 'git', ['config', 'core.hooksPath']), /machina-testing-hooks/);
   // Lifecycle scripts cannot create a Git repository where none was requested.
