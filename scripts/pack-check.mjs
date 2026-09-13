@@ -9,7 +9,7 @@ const packages=[];
 for(const name of ['testing','build-info']){
  const [pack]=JSON.parse(execFileSync('npm',['pack',`./packages/${name}`,'--json','--ignore-scripts','--pack-destination',directory],{encoding:'utf8'}));
  assert(pack.files.some(f=>f.path==='LICENSE'));assert(pack.files.some(f=>f.path==='README.md'));assert(pack.files.some(f=>f.path==='dist/index.d.ts'));
- assert(pack.files.every(f=>/^(dist\/|src\/|tsconfig.json$|LICENSE$|README.md$|CHANGELOG.md$|package.json$)/.test(f.path)),'unexpected packaged file');
+ assert(pack.files.every(f=>/^(dist\/|src\/|tooling\/|tsconfig.json$|LICENSE$|README.md$|CHANGELOG.md$|package.json$)/.test(f.path)),'unexpected packaged file');
  for(const file of await readdir(`packages/${name}/dist`))if(file.endsWith('.d.ts')){
   await mkdir(`api/${name}`,{recursive:true});
   const actual=await readFile(`packages/${name}/dist/${file}`,'utf8');
@@ -18,6 +18,7 @@ for(const name of ['testing','build-info']){
  const bytes=await readFile(join(directory,pack.filename));
  packages.push({name:pack.name,version:pack.version,filename:pack.filename,integrity:pack.integrity,sha256:createHash('sha256').update(bytes).digest('hex'),files:pack.files.map(f=>f.path)});
 }
+execFileSync(process.execPath, ['scripts/testing-install-check.mjs', join(directory, packages.find(p => p.name === '@machinapractica/testing').filename)], { stdio: 'inherit' });
 const temp=await mkdtemp(join(tmpdir(),'mp-packed-contract-'));
 try{
  await mkdir(join(temp,'artifact'));
