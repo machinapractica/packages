@@ -71,3 +71,14 @@ Actor: user. PR: pending. Continuing the authorized initial publication and trus
 PR reference for the 2026-09-12 npm publication continuation: https://github.com/machinapractica/packages/pull/4.
 
 PR #4 verification follow-up: public registry tarballs match the tested hashes; record npm's additional latest tags and unsuccessful tag-cleanup attempt without implying a stable release.
+
+## Package-owned testing enforcement — 2026-09-13
+
+Actor: user
+PR: https://github.com/machinapractica/packages/pull/5
+
+```text
+I notice in the testing you did you encountered fixed sleeps. Can we not enforce the testing rules when the testing package is isntalled? It would ideally put precommits into the project that would fail the fixed waits without the user needing to ask the agent to do that or the agent doing it over again every tiem
+```
+
+Validation note: the clean Linux runner exposed missing registry metadata in offline install fixtures. The fixtures now seed dependency entries from the committed lockfile; the packed contracts also pass with a newly created npm cache populated only by npm ci.

@@ -20,3 +20,9 @@ Local verification: 18 unit/CLI/source-integrity contracts and three Chromium co
 The TypeScript sources and license travel in the npm tarballs. `.artifacts/release-manifest.json` binds tarball contents to the verified source revision and flags a dirty working tree. CI retains logs and browser evidence even on failure. See [release procedure](RELEASING.md) and [source inventory](SOURCE_INVENTORY.md).
 
 On 2026-09-12 npm confirmed publication of both `0.1.0-alpha.0` packages with public access and the `alpha` tag. Both have trusted publishers for `machinapractica/packages`, `release.yml`, environment `npm`. The first versions were locally bootstrapped without GitHub provenance; future workflow publications request OIDC provenance. No additional version was published merely to test the trust configuration.
+
+## Package-owned test policy — 2026-09-13
+
+Testing alpha.1 moves the fixed-wait checker out of the skill assets and into the npm package. Installation configures a staged pre-commit check; `mp-testing setup` adds persistent prepare/pretest commands while preserving existing hooks and scripts. CI runs `mp-testing check` directly. The check rejects recognizable fixed sleeps, not arbitrary timer logic.
+
+Validation: 21 unit/CLI/source-integrity contracts, 3 Chromium contracts, public packed imports/types, and actual packed-install Git fixtures covering forbidden staged waits, partial staging, existing-hook success/failure, idempotent setup, ignored scripts, npm test, fresh clones, nested projects and installation without Git. No original source consumer was changed.

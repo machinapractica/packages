@@ -9,7 +9,7 @@ const packages=[];
 for(const name of ['testing','build-info']){
  const [pack]=JSON.parse(execFileSync('npm',['pack',`./packages/${name}`,'--json','--ignore-scripts','--pack-destination',directory],{encoding:'utf8'}));
  assert(pack.files.some(f=>f.path==='LICENSE'));assert(pack.files.some(f=>f.path==='README.md'));assert(pack.files.some(f=>f.path==='dist/index.d.ts'));
- assert(pack.files.every(f=>/^(dist\/|src\/|tsconfig.json$|LICENSE$|README.md$|CHANGELOG.md$|package.json$)/.test(f.path)),'unexpected packaged file');
+ assert(pack.files.every(f=>/^(dist\/|src\/|tooling\/|tsconfig.json$|LICENSE$|README.md$|CHANGELOG.md$|package.json$)/.test(f.path)),'unexpected packaged file');
  for(const file of await readdir(`packages/${name}/dist`))if(file.endsWith('.d.ts')){
   await mkdir(`api/${name}`,{recursive:true});
   const actual=await readFile(`packages/${name}/dist/${file}`,'utf8');
@@ -18,11 +18,14 @@ for(const name of ['testing','build-info']){
  const bytes=await readFile(join(directory,pack.filename));
  packages.push({name:pack.name,version:pack.version,filename:pack.filename,integrity:pack.integrity,sha256:createHash('sha256').update(bytes).digest('hex'),files:pack.files.map(f=>f.path)});
 }
+execFileSync(process.execPath, ['scripts/testing-install-check.mjs', join(directory, packages.find(p => p.name === '@machinapractica/testing').filename)], { stdio: 'inherit' });
 const temp=await mkdtemp(join(tmpdir(),'mp-packed-contract-'));
 try{
  await mkdir(join(temp,'artifact'));
  await writeFile(join(temp,'artifact','index.html'),'packed CLI fixture');
  await writeFile(join(temp,'package.json'),JSON.stringify({private:true,type:'module'}));
+ const dependencyLock = JSON.parse(await readFile('package-lock.json', 'utf8'));
+ await writeFile(join(temp, 'package-lock.json'), JSON.stringify({ lockfileVersion: 3, requires: true, packages: { '': { private: true, type: 'module' }, ...Object.fromEntries(Object.entries(dependencyLock.packages).filter(([name]) => name.startsWith('node_modules/@babel/'))) } }));
  execFileSync('npm',['install','--ignore-scripts','--no-audit','--no-fund','--offline',...packages.map(p=>join(directory,p.filename))],{cwd:temp,stdio:'pipe'});
  execFileSync('node',['--input-type=module','-e',`import assert from 'node:assert/strict';import {Recorder} from '@machinapractica/testing';import {sha256} from '@machinapractica/testing/node';import {parseBuildInfo} from '@machinapractica/build-info';import {hashArtifact} from '@machinapractica/build-info/node';assert.equal(new Recorder({scenario:'packed import',revision:'a'.repeat(40),platform:'node'}).snapshot().status,'running');assert.equal(sha256(new Uint8Array()).length,64);assert.throws(()=>parseBuildInfo({}));assert.match(await hashArtifact('artifact'),/^sha256:/);`],{cwd:temp,stdio:'pipe'});
  execFileSync(join(temp,'node_modules/.bin/mp-build-info'),['create','artifact','https://github.com/machinapractica/packages','a'.repeat(40),'packed-test'],{cwd:temp,stdio:'pipe'});

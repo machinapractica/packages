@@ -1,6 +1,6 @@
 {
   "name": "@machinapractica/testing",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Semantic evidence receipts and bounded test coordination",
   "type": "module",
   "license": "GPL-3.0-only",
@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/machinapractica/packages",
   "engines": {
-    "node": ">=22"
+    "node": "^22.18.0 || >=24.11.0"
   },
   "files": [
     "dist",
@@ -19,7 +19,8 @@
     "README.md",
     "CHANGELOG.md",
     "src",
-    "tsconfig.json"
+    "tsconfig.json",
+    "tooling"
   ],
   "exports": {
     ".": {
@@ -33,7 +34,8 @@
     "./playwright": {
       "types": "./dist/playwright.d.ts",
       "import": "./dist/playwright.js"
-    }
+    },
+    "./cli": "./tooling/cli.mjs"
   },
   "publishConfig": {
     "access": "public",
@@ -46,5 +48,14 @@
     "@playwright/test": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "@babel/parser": "8.0.5"
+  },
+  "bin": {
+    "mp-testing": "tooling/cli.mjs"
+  },
+  "scripts": {
+    "postinstall": "node tooling/install.mjs"
   }
 }
