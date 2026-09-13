@@ -75,7 +75,7 @@ PR #4 verification follow-up: public registry tarballs match the tested hashes; 
 ## Package-owned testing enforcement — 2026-09-13
 
 Actor: user
-PR: pending
+PR: https://github.com/machinapractica/packages/pull/5
 
 ```text
 I notice in the testing you did you encountered fixed sleeps. Can we not enforce the testing rules when the testing package is isntalled? It would ideally put precommits into the project that would fail the fixed waits without the user needing to ask the agent to do that or the agent doing it over again every tiem
